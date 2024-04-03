@@ -7,9 +7,14 @@ from base_caching import BaseCaching
 class BasicCache(BaseCaching):
     """BasicCache class inheriting from parent class BaseCaching"""
 
+    def __init__(self):
+        """initializing self"""
+        super().__init__()
+
+
     def put(self, key, item):
         """function that adds item in cache"""
-        if key or item is None:
+        if key is None or item is None:
             pass
         else:
             self.cache_data[key] = item
