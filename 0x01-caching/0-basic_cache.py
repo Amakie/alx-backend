@@ -11,7 +11,6 @@ class BasicCache(BaseCaching):
         """initializing self"""
         super().__init__()
 
-
     def put(self, key, item):
         """function that adds item in cache"""
         if key is None or item is None:
