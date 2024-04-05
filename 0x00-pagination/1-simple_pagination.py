@@ -1,22 +1,19 @@
 #!/usr/bin/env python3
-"""Implement a method named get_page
-that takes two integer arguments page with default
-value 1 and page_size with default value 10"""
+"""Write a function named index_range that takes two integer
+arguments page and page_size
+"""
 
+
+from typing import Tuple, List
 import csv
-from typing import Tuple
 import math
 
 
-#!/usr/bin/env python3
-""" function that takes two integer arguments page and page_size"""
-
-from typing import Tuple
-
-
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
-    """return a tuple of the start and end pages"""
-    return (((page-1) * page_size), (page * page_size))
+    """
+    start index and an end index corresponding to the range of
+    """
+    return ((page-1) * page_size, page_size * page)
 
 
 class Server:
@@ -39,9 +36,16 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-            pass
-    
+        """return the appropriate page of the dataset"""
+        assert type(page) is int and page > 0
+        assert type(page_size) is int and page_size > 0
 
-def get_page 
+        # receive data from the csv
+        data = self.dataset()
 
-
+        try:
+            # receive index to start and end at
+            start, end = index_range(page, page_size)
+            return data[start:end]
+        except IndexError:
+            return []
