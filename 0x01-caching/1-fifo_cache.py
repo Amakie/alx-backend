@@ -1,19 +1,20 @@
 #!/usr/bin/env python3
-"""Basic caching system"""
+"""Create a class FIFOCache that inherits from
+BaseCaching and is a caching system"""
+
 
 BaseCaching = __import__('base_caching').BaseCaching
 
 
-class FIFOcache(BaseCaching):
-    """FIFOcache inheriting from parent class"""
+class FIFOCache(BaseCaching):
+    """class FIFICache"""
 
     def __init__(self):
-        """initializing self
-        """
+        """initializing self"""
         super().__init__()
 
     def put(self, key, item):
-        """initial function"""
+        """ put function"""
         if key is None or item is None:
             pass
         else:
@@ -26,7 +27,7 @@ class FIFOcache(BaseCaching):
             self.cache_data[key] = item
 
     def get(self, key):
-        """return the value in self.cache_data linked to key"""
+        """get function"""
         if key is None or key not in self.cache_data.keys():
             return None
         return self.cache_data.get(key)
